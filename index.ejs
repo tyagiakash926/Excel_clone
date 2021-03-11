@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+        <div class="menu-container">
+            <img src="../../homework/activity/Coventic Webpage images/excel-icons-animation.gif" height="45px" width="40px">
+            <div class="line"></div>
+            <div class="file">File</div>
+            <div class="line"></div>
+            <div class="home">Home</div>
+        </div>
+        <div class="menu-options-container">
+            <div class="file-menu-options active">
+                <div class="new" style="
+                border: 3px solid rgb(197, 22, 124);
+                font-family: cursive;
+                color: white;
+            ">New</div>
+                <div class="line"></div>
+                <div class="open" style="
+                border: 3px solid rgb(197, 22, 124);
+;
+                font-family: cursive;
+                color: white;
+            ">Open</div>
+                <div class="line"></div>
+                <div class="save"  style="
+                border: 3px solid rgb(197, 22, 124);
+                font-family: cursive;
+                color: white;
+            ">Save</div>
+            </div>
+            <div class="home-menu-options">
+                <div class="font-styles">
+                    <div class="font">
+                        <select size ="2"  name="font-style" id="font">
+                            <option value="Arial" style="font-family: Arial;">Arial</option>
+                            <option value="monospace" style="font-family: monospace;">monospace</option>
+                            <option value="cursive" style="font-family: cursive;">Cursive</option>
+                            <option value="sans-serif" style="font-family: sans-serif;">Sans-serif</option>
+                            <option value="Segoe UI" style="font-family: Segoe UI;">Segoe UI</option>
+                            <option value="fantasy"   style="font-family: fantasy;" >fantasy</option>
+                            <option value="Times New Roman"   style="font-family: Times New Roman;" >Times New Roman</option>
+                            <option value="Cochin"   style="font-family: Cochin;" >Cochin</option>
+                            <option value="Impact"   style="font-family: Impact;" >Impact</option>
+                            <option value="Verdana"   style="font-family: Verdana;" >Verdana</option>
+                            <option value="Lucida Sans"  style="font-family:Lucida Sans;" >Lucida Sans/option> 
+                        </select>
+                    </div>
+                    <div class="font-bold">
+                        <div class="bold">
+                            <i class="fa fa-bold" aria-hidden="true"></i>
+                        </div>
+                           <div class="underline"><i class="fa fa-underline" aria-hidden="true"></i></div>
+                       <div class="italic">
+                        <i class="fa fa-italic" aria-hidden="true"></i>
+                       </div>
+                        
+                            
+                      
+                        
+                            
+                        
+                    </div>
+                </div>
+                <div class="font-size">
+                    <div class="font-sizea">
+                        <select size = "2" name="font-sizes" id="font-size">
+                            <option value=""></option>
+                            <option value="10">10</option>
+                            <option value="12">12</option>
+                            <option value="14">14</option>
+                            <option value="16">16</option>
+                            <option value="18">18</option>
+                            <option value="20">20</option>
+                            <option value="22">22</option>
+                        </select>
+                       <!-- <input type="range" id="font-size" min="10" max="40" value="16"> -->
+                    </div>
+                    <div class="font-color">
+                        <input type="color" id="cell-text-color">
+                        <input type="color" id="cell-color">
+                    </div>
+                </div>
+                <div class="font-alignment">
+                    <div class="left">
+                        <i class="fa fa-align-left" aria-hidden="true"></i>
+                    </div>
+                    <div class="center">
+                        <i class="fa fa-align-center" aria-hidden="true"></i>
+                    </div>
+                    <div class="right">
+                        <i class="fa fa-align-right" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="formula-tab">
+            <img src="../../homework/activity/Coventic Webpage images/math_symbols_bouncing_up_down_md_wm.gif" height="45px" width="40px" style="    margin: 16px;">
+            <div class="space"></div>
+            <input type="text" id="address" disabled>
+            <div class="space"></div>
+            <input type="text" id="formula" placeholder="Formula">
+        </div>
+        <div class="excel-bg">
+            <img src="../../homework/activity/Coventic Webpage images/spreadsheetants.gif" alt="" style="
+            height: 223px;
+            width: 223px;
+            position: absolute;
+            z-index: 2;
+            top: 44%;
+            left: 38%;
+        ">
+        </div>
+        <div class="content">
+                <div class="top-left-cell"></div>
+                <div class="top-row">
+                    <% for(let j=0 ; j<26 ; j++) {%>
+                        <div class="top-row-cell" cellId=<%=j%>> <%= String.fromCharCode(65+j) %> </div>
+                        <%}%>
+                </div>
+                <div class="left-col">
+                    <% for(let j=0 ; j<100 ; j++) {%>
+                        <div class="left-col-cell" cellId=<%=j%>> <%= j+1%></div>
+                        <%}%>
+                </div>
+                <div class="cells">
+                    <% for(let i=0 ; i<100 ; i++){ %>
+                        <div class="row">
+                        <% for(let j=0 ; j<26 ; j++) {%>
+                            <div class="cell" contentEditable="true" rId =<%= i%> cId =<%= j%>></div>
+                            <%}%>
+                        </div>   
+                    <%}%>
+                </div>
+            </div>
+        
+        
+        
+    
+        <div class ="sheets" id="sheets">
+            <ul class="sheets-nav">
+                <li class="sheets-item active-sheet" id="1">Sheet1</li>
+            </ul>
+            <button class="add-sheets">
+                &#43;
+            </button>
+        
+    
+    
+    <script src="./script.js"></script>
+</body>
+</html>
